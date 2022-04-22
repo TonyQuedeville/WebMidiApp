@@ -1,0 +1,198 @@
+<!--
+    Tony-Steel. 
+    30/12/2021. 
+    Projet d'application Web Midi
+    index.html : Page d'accueil. (Midi Standard)
+-->
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="img/icn-STS.png"/>
+        <title>T-Steel Web Midi App</title>
+        <!-- Lien utile : https://webaudio.github.io/web-midi-api/#webidl-843190470 -->
+        
+        <link rel="stylesheet" href="css/style.css">   
+    </head>
+
+
+    <body class="unselectable">
+        <!--- Barre de navigation -->
+        <nav>  
+            <ul>
+                <li>
+                    <div>
+                        <img src="img/icn-STS Blanc.png" width="30" height="26" class="">
+                    </div>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <h1 >Midi Standard Controller</h1>
+                </li>
+            </ul>  
+            <ul>
+                <li>
+                    <h3 >Synth-T-Steel WebMidi Application</h3>
+                </li>
+                <img src="img/icn-STS Blanc.png" width="30" height="26" class="">
+            </ul>  
+        </nav>
+        <!---->
+        
+        
+        <!-- Midi Standard -->
+        <main>  
+            <!-- Vidéo de présentation -->
+            <div class="video invisible"></div>
+            <!---->
+
+            <!-- Synths Controllers -->
+            <!-- <div id="marques" class="verticale panel"></div> -->
+            <div id="marques" class="carousel"></div>
+                <!-- https://freefrontend.com/css-carousels/ -->
+            <!---->
+
+            <!-- Midi -->
+            <section class="midiStandard">
+
+                <!-- Midi Out -->
+                <section class="module verticale">
+                    <!-- Interface Change -->
+                    <div class="verticale">
+                        <h2 class="select">Midi Out</h2>
+                        <h3  class="select">Id Interface Midi</h3>
+                        <select name="intMidiOut" class="intMidi" id="intMidiOut"></select>                        
+                        <h3  class="select">Midi Out channel</h3>
+                        <input type="number" name="chnMidiOut" id="chnMidiOut" class="val1-16" min="1" max="16" value="1">         
+
+                    <!-- Programme Change -->
+                        <h3  class="select">Bank Change</h3>
+                        <input type="number" name="bkChgMidiOut" id="bkChgMidiOut" class="val0-127" min="0" max="127" value="0">
+
+                        <h3  class="select">Program Change</h3>
+                        <input type="number" name="pgChgMidiOut" id="pgChgMidiOut" class="val0-127" min="0" max="127" value="0">
+                    </div>
+                    
+                </section>  
+
+                <!-- Control Change -->
+                <section class="verticale">
+                    <!-- Potentiomètre -->
+                    <div class="potentiometre" id="stdMidiCtrlChg"></div>
+                    <!---->
+                </section>
+                <!---->
+
+                <!-- Midi In -->
+                <section class="infoMidi">
+                    <div class="module horizontale">
+                        <div class="verticale">
+                            <h2 class="select">Midi In</h2>
+                            <h3 class="select">Id Interface Midi</h3>
+                            <select name="intMidiIn" id="intMidiIn" class="intMidi"></select>
+                            
+                            <h3  class="select">Midi In channel</h3>
+                            <input disabled type="number" name="chnMidiIn"  id="chnMidiIn"  class="val1-16" min="1" max="16" value="1">                         
+                            
+                            <h2 class="select">Midi Thru</h2>
+                            <div class="horizontale">
+                                <h3>In .</h3>
+                                <div>
+                                    <input type="checkbox" name="activeThru" id="activeThru" checked>
+                                    <label class="checkbox" for="activeThru">>></label> 
+                                </div>
+                                <h3>Out .</h3>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2  class="select">Messages in :</h2>
+                            <div class="inline" id="pgChgMidiIn">
+                                <h3 >Program change :</h3>
+                            </div>
+
+                            <div class="inline" id="noteMidiIn">
+                                <h3 >Note :</h3>
+                            </div>
+
+                            <div class="inline" id="velMidiIn">
+                                <h3 >Velocity :</h3>
+                            </div>
+                            
+                            <div class="inline" id="relMidiIn">
+                                <h3 >Release :</h3>
+                            </div>
+
+                            <div class="inline" id="pitchMidiIn">
+                                <h3 >Pitch bend :</h3>
+                            </div>
+                            
+                            <div class="inline" id="aftchMidiIn">
+                                <h3 >Aftertouch :</h3>
+                            </div>
+
+                            <div class="inline" id="cChgNumMidiIn">
+                                <h3 >Control change num :</h3>
+                            </div>
+                            
+                            <div class="inline" id="cChgMidiIn">
+                                <h3 >Control change val :</h3>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <!---->
+
+            <!-- Clavier virtuel -->
+            <section class="clavier overflowAuto verticale" id="clavier"></section>
+            <!---->
+            
+            <!-- Sequenceur -->
+            <div class="verticale sequenceur" id="sequenceur">
+                <h2>Sequenceur</h2>
+                <h4>Fonctionalité en cours de développement !</h4>
+                <!--<iframe 
+                    src="./sequenceur.html" 
+                    name="Sequenceur"
+                    width="1500"
+                    height="500">
+                </iframe>-->
+            </div>
+            <!---->
+
+        
+            <!-- Interface -->
+            <footer class="infoMidi overflowAuto interfaceDetect" id="interfaceDetect">
+                <h3 class="erreur" id="listInt">Interface Midi : non reconnue !</h3>
+            </footer>    
+            <!---->
+        </main>
+        
+
+        <!-- Script JS -->                
+            <!-- jQuery 
+                <script src="jQuery.js"></script> 
+            -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            
+            <!-- Elements JS -->
+            <script src="fonctions.js"></script> 
+            <script src="clavier.js"></script>        
+            <script src="potentiometre.js"></script> 
+            <script src="synths.js"></script>  
+            <script src="webmidi.iife.js"></script>
+            <script src="WebMidiApp.js"></script>                                   
+            <script src="index.js"></script>                                   
+            
+            <!-- webMidi JS -->
+            <!-- webMidi CDN
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/webmidi@3.0.0-alpha.16/dist/webmidi.iife.js"></script>
+            -->
+        <!---->   
+    </body>
+</html>

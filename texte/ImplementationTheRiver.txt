@@ -1,0 +1,90 @@
+
+Impementation Midi The River : https://www.baloran.com/TheRiver/Manual/The%20River%20MIDI%20Implementation%20Chart%20v1%200.pdf
+Toutes les communications doivent être faites sur le canal 14
+
+/*---------------------------------------------------------*/
+
+Channel Control Change Messages
+Hex = B(ch) Param Value
+Dec = (176+ch) Param Value
+Ch = channel 0..15
+
+Function Param (Hex) Range (Hex) Remark
+
+Mix Osc 1           40 (28) 0..127 (00..7F)
+Osc 1 Range         41 (29) 0..3 (00..03) 0=32’,1=16’,2=8’,3=4’
+Osc 1 Wave          42 (2A) 0..2 (00..02) 0=Tri, 1=Saw 2=Sqr
+Osc 1 PWM Lfo       44 (2C) 0..127 (00..7F)
+Pwm Env             47 (2F) 0,1 (00,01) 0=Lfo,1=Env. Filter
+Negative Env        48 (30) 0,1 (00,01) 0=Normal, 1=Invert
+Mix Noise           49 (31) 0..127 (00..7F)
+Mix Osc 2           50 (32) 0..127 (00..7F)
+Osc 2 Range         51 (33) 0..3 (00..03) 0=32’,1=16’,2=8’,3=4’
+Osc 2 Wave          52 (34) 0..2 (00..02) 0=Tri, 1=Saw 2=Sqr
+Osc 2 PWM L/E       54 (36) 0..127 (00..7F)
+Synchro Osc         58 (3A) 0,1 (00,01) 0=Off,1=On
+Osc 2 Interval      59 (3B) 0..25 (00..19) 0=-12,12=0,24=+12,25=Keyb Off
+Bend range          64 (40) 0..12 (00..0C)
+Flt Key Tracking    65 (41) 0..127 (00..7F)
+Flt Env Amount      66 (42) 0..127 (00..7F)
+Osc 2 FM Filter     67 (43) 0..127 (00..7F)
+Filter Attack       70 (46) 0..127 (00..7F)
+Filter Decay        71 (47) 0..127 (00..7F)
+Filter Sustain      72 (48) 0..127 (00..7F)
+Filter Release      73 (49) 0..127 (00..7F)
+VCA Decay           75 (4B) 0..127 (00..7F)
+VCA Sustain         76 (4C) 0..127 (00..7F)
+VCA Release         77 (4D) 0..127 (00..7F)
+Velo. Expression    78 (4E) 0..127 (00..7F)
+Velo/Delay Lfo      79 (4F) 0..127 (00..7F)
+Lfo Wave            80 (50) 0,1 (00,01) 0=Tri, 1=Sqr
+Wheel Lfo & Others  88 (58) Bit 1 = Wheel 2 Lfo
+                            Bit 2 = Glide semiton
+                            Bit 3 = Delai LFO
+Glide               89 (59) 0..127 (00..7F)
+Detune              90 (5A) 0..15 (00..0F)
+
+/*--------------*/
+
+Channel NRPN Messages
+Hex = B(ch) 63 (Msb Param) B(ch) 62 (Lsb Param) B(ch) 06 (Msb Value) B(ch) 26 (Lsb Value)
+Dec = (176+ch) 99 (Msb Param) 98 (Lsb Param) (176+ch) 6 (Msb Value) 38 (Lsb Value)
+Ch = channel 0..15
+
+Function Param (Msb Lsb) Range (Max Msb Lsb) Remark
+
+Osc 1 PW            43 (Dec=0 43, Hex=00 2B) 0..400 (Dec=3 16, Hex=03 10)
+Osc 1 DLfo          45 (Dec=0 45, Hex=00 2D) 0..400 (Dec=3 16, Hex=03 10)
+Osc 1 Lfo           46 (Dec=0 46, Hex=00 2E) 0..400 (Dec=3 16, Hex=03 10)
+Osc 2 PW            53 (Dec=0 53, Hex=00 35) 0..400 (Dec=3 16, Hex=03 10)
+Osc 2 DLfo          55 (Dec=0 55, Hex=00 37) 0..400 (Dec=3 16, Hex=03 10)
+Osc 2 Lfo           56 (Dec=0 56, Hex=00 38) 0..400 (Dec=3 16, Hex=03 10)
+Osc 2 Fine Tune     57 (Dec=0 57, Hex=00 39) 0..400 (Dec=3 16, Hex=03 10)
+Filter Cutoff       60 (Dec=0 60, Hex=00 3C) 0..400 (Dec=3 16, Hex=03 10)
+Filter Emphasis     61 (Dec=0 61, Hex=00 3D) 0..400 (Dec=3 16, Hex=03 10)
+Filter DLfo         62 (Dec=0 62, Hex=00 3E) 0..400 (Dec=3 16, Hex=03 10)
+Filter Lfo          63 (Dec=0 63, Hex=00 3F) 0..400 (Dec=3 16, Hex=03 10)
+VCA Attack          74 (Dec=0 74, Hex=00 4A) 0..400 (Dec=3 16, Hex=03 10)
+Lfo Rate            81 (Dec=0 81, Hex=00 51) 0..400 (Dec=3 16, Hex=03 10)
+DLfo Wave           82 (Dec=0 82, Hex=00 52) 0..10 (Dec=0 10, Hex=00 0A) 0=Const, 1=Sin, 2=Tri, 3=Sqr, 4=Saw Up, 5=Saw Down,
+                                                    6=S&H, 7=Rand, 8=Tape, 9 = One Up, 10 = One Down
+DLfo Rate           83 (Dec=0 83, Hex=00 53) 0..400 (Dec=3 16, Hex=03 10)
+DLfo Decay          151 (Dec=1 23, Hex=01 17) 0..400 (Dec=3 16, Hex=03 10)
+Dlfo Ampl/Rate %    84 (Dec=0 84, Hex=00 54) 0..400 (Dec=3 16, Hex=03 10)
+DLfo Wheel          85 (Dec=0 85, Hex=00 55) 0..127 (Dec=0 127, Hex=00 7F)
+DLfo Velocity       86 (Dec=0 86, Hex=00 56) 0..127 (Dec=0 127, Hex=00 7F)
+DLfo Aftertouch     87 (Dec=0 87, Hex=00 57) 0..127 (Dec=0 127, Hex=00 7F)
+DLfo Pedal          88 (Dec=0 88, Hex=00 58) 0..127 (Dec=0 127, Hex=00 7F)
+Pedal Min Level     89 (Dec=0 89, Hex=00 59) 0..127 (Dec=0 127, Hex=00 7F)
+Vel. Attack         140 (Dec=1 12, Hex=01 0C) 0..127 (Dec=0 127, Hex=00 7F)
+Vel. Release        142 (Dec=1 14, Hex=01 0E) 0..127 (Dec=0 127, Hex=00 7F)
+Flt. Vel. Attack    143 (Dec=1 15, Hex=01 0F) 0..127 (Dec=0 127, Hex=00 7F)
+Flt Vel. Release    145 (Dec=1 17, Hex=01 11) 0..127 (Dec=0 127, Hex=00 7F)
+DLfo Emphasis       146 (Dec=1 18, Hex=01 12) 0..127 (Dec=0 127, Hex=00 7F)
+DLfo Keyb Reset     147 (Dec=1 19, Hex=01 13) 0..3 (Dec=0 3, Hex=00 03) 0=None, 1=Reset, 2=Loop, 3 =Reset + Loop
+DLFo Mix OSC1       148 (Dec=1 20, Hex=01 14) 0..127 (Dec=0 127, Hex=00 7F)
+DLFo Mix OSC2       149 (Dec=1 21, Hex=01 15) 0..127 (Dec=0 127, Hex=00 7F)
+DLfo Mix Noise      150 (Dec=1 22, Hex=01 16) 0..127 (Dec=0 127, Hex=00 7F)
+MPE Z               166 (Dec=1 38, Hex=01 26) 0..29 (Dec=0 29, Hex=00 1D)
+MPE Y               167 (Dec=1 39, Hex=01 27) 0..29 (Dec=0 29, Hex=00 1D)
+Vel. VCF            168 (Dec=1 40, Hex=01 28) 0..127 (Dec=0 127, Hex=00 7F)

@@ -1,0 +1,164 @@
+Oberheim = 0x10 
+Sysex : 0xF0, Oberheim, 0x06(device), 0x06, control, valeur, 0xF7
+Mettre la Matrix-6 en mode Patch Edit et activer Quick (code opération 0x05)
+Attendre 20ms entre chaque envoi.
+Lien utile : http://www.synthzone.com/midi/oberheim/Matrix6/
+
+---------------------------------------------------------------------------------------------
+Patch Edit: [0xF0, Oberheim, 0x06, 0x05, 0x00, 0xF7]
+---------------------------------------------------------------------------------------------
+
+
+Valeurs DCO 1 HEX			 Matrix 6 /6R
+---------------------------------------------------------------------------------------------
+00 Fréquence F0 10 06 06 00 DV F7 (0 - 63)
+01 Modulation de fréquence par LFO 1 F0 10 06 06 01 DV F7 (0 - 63)
+02 Sync F0 10 06 06 02 DV F7 (0, 1, 2, 3)
+03 Largeur d'impulsion F0 10 06 06 03 DV F7 (0 - 63)
+04 PW Mod Par LFO 2 F0 10 06 06 04 DV F7 (0 - 63)
+05 Forme d'onde F0 10 06 06 05 DV F7 (0 - 63)
+06 Wave Select F0 10 06 06 06 DV F7 (Off, Pulse, Wave, Both)
+07 Leviers F0 10 06 06 07 DV F7 (Off, Bend, Vib, Both)
+08 Clavier/Portamento F0 10 06 06 08 DV F7 (Clavier, Portamento)
+09 Clic de touche F0 10 06 06 09 DV F7 (Désactivé, Activé)
+
+
+Valeurs DCO 2 HEX			 Matrix 6 /6R
+---------------------------------------------------------------------------------------------
+10 Fréquence F0 10 06 06 0A DV F7 (0 - 63)
+11 Modulation de fréquence par LFO 1 F0 10 06 06 0B DV F7 (0 - 63)
+12 Désaccord F0 10 06 06 0C DV F7 (-31 - +31)
+13 Largeur d'impulsion F0 10 06 06 0D DV F7 (0 - 63)
+14 PW Mod Par LFO 2 F0 10 06 06 0E DV F7 (0 - 63)
+15 Forme d'onde F0 10 06 06 0F DV F7 (0 - 63)
+16 Wave Select F0 10 06 06 10 DV F7 (Off, Pulse, Wave, Both, Noise)
+17 Leviers F0 10 06 06 11 DV F7 (Off, Bend, Vib, Both)
+18 Clavier/Portamento F0 10 06 06 12 DV F7 (Désactivé, Portamento, Clavier)
+19 Clic de touche F0 10 06 06 13 DV F7 (Désactivé, Activé)
+
+
+Valeurs VCF/VCA HEX			 Matrix 6 /6R
+---------------------------------------------------------------------------------------------
+20 DCO Mix F0 10 06 06 14 DV F7 (0 - 63)
+21 Fréquence F0 10 06 06 15 DV F7 (0 - 127)
+22 Fréquence Mod Par ENV 1 F0 10 06 06 16 DV F7 (0 - 63)
+23 Fréquence Mod Par Pression F0 10 06 06 17 DV F7 (0 - 63)
+24 Résonance F0 10 06 06 18 DV F7 (0 - 63)
+25 Leviers F0 10 06 06 19 DV F7 (Off, Bend, Vib, Both)
+26 Clavier/Portamento F0 10 06 06 1A DV F7 (Désactivé, Portamento, Clavier)
+27 VCA1 Volume F0 10 06 06 1B DV F7 (0 - 63)
+28 VCA1 Mod par vélocité F0 10 06 06 1C DV F7 (0 - 63)
+29 VCA2 Mod Par ENV 2 F0 10 06 06 1D DV F7 (0 - 63)
+
+
+Valeurs FM/TRACK HEX			 Matrix 6 /6R
+---------------------------------------------------------------------------------------------
+30 Quantité FM VCF F0 10 06 06 1E DV F7 (0 - 63)
+31 FM Mod Par ENV 3 F0 10 06 06 1F DV F7 (0 - 63)
+32 FM Mod par pression F0 10 06 06 20 DV F7 (0 - 63)
+33 Track Input			F0 10 06 06 21 DV F7	(ENV1, ENV2, ENV3, LFO1, LFO2, Vib,
+							 Rampe 1, Rampe 2, Clavier, Portamento,
+							 Trak, Gate, Velocity, Release Velocity, Pressure,
+							 Pedal 1, Pedal 2, Lever 1, Lever 2, Lever 3)
+34 Point de suivi 1 F0 10 06 06 22 DV F7 (0 - 63)
+35 Point de suivi 2 F0 10 06 06 23 DV F7 (0 - 63)
+36 Point de suivi 3 F0 10 06 06 24 DV F7 (0 - 63)
+37 Point de suivi 4 F0 10 06 06 25 DV F7 (0 - 63)
+38 Point de suivi 5 F0 10 06 06 26 DV F7 (0 - 63)
+
+
+Valeurs RAMP/PORTAMENTO HEX			 Matrix 6 /6R
+---------------------------------------------------------------------------------------------
+40 Débit/vitesse rampe 1 F0 10 06 06 28 DV F7 (0 - 63)
+41 Déclenchement rampe 1 F0 10 06 06 29 DV F7 (Déclenchement simple [STrig], Déclenchement multiple [MTrig),
+							 Déclencheur unique externe [XTrig], déclencheur externe contrôlé [GateX])
+42 Rampe 2 Taux/Vitesse F0 10 06 06 2A DV F7 (0 - 63)
+43 Rampe 2 Déclencheur F0 10 06 06 2B DV F7 (Déclenchement unique [STrig], Déclenchement multiple [MTrig),
+							 Déclencheur unique externe [XTrig], déclencheur externe contrôlé [GateX])
+44 Portamento Rate F0 10 06 06 2C DV F7 (0 - 63)
+45 Portamento Mod par Velocity F0 10 06 06 2D DV F7 (0 - 63)
+46 Mode Portamento F0 10 06 06 2E DV F7 (Linéaire, Constant [Const], Exponentiel [Expo])
+47 Legato Portamento F0 10 06 06 2F DV F7 (désactivé, activé)
+48 Mode clavier F0 10 06 06 31 DV F7 (Reassign [Reasgn], Rotate, Unison, Reassign Rob [ReaRob])
+
+
+Valeurs ENV 1 HEX			 Matrix 6 /6R
+---------------------------------------------------------------------------------------------
+50 Retard F0 10 06 06 32 DV F7 (0 - 63)
+51 Attaque F0 10 06 06 33 DV F7 (0 - 63)
+52 Decay F0 10 06 06 34 DV F7 (0 - 63)
+53 Maintien F0 10 06 06 35 DV F7 (0 - 63)
+54 Libération F0 10 06 06 36 DV F7 (0 - 63)
+55 Amplitude F0 10 06 06 37 DV F7 (0 - 63)
+56 Amp Mod By Velocity F0 10 06 06 38 DV F7 (-63 - +63)
+57 Mode de déclenchement F0 10 06 06 39 DV F7 (Déclenchement unique [STrig], Réinitialisation de déclenchement unique [SReset], Déclenchement multiple [MTrig),
+							 Réinitialisation de plusieurs déclencheurs [MReset], déclencheur unique externe [Xtrig], déclencheur multiple externe [XMTrig],
+							 Réinitialisation de déclenchement externe [XReset], Réinitialisation de déclenchement multiple externe [XMRst])
+58 Mode enveloppe F0 10 06 06 3A DV F7 (Normal [Norm], Delay-Attack-Decay-Release [DADR], Freerun [Free], Les deux)
+59 LFO 1 Trigger F0 10 06 06 3B DV F7 (Normal [Norm], LFO1, Gated LFO 1 Trigger [G-LFO1])
+
+
+Valeurs ENV 2 HEX			 Matrix 6 /6R
+---------------------------------------------------------------------------------------------
+60 Délai F0 10 06 06 3C DV F7 (0 - 63)
+61 Attaque F0 10 06 06 DV 3D F7 (0 - 63)
+62 Décroissance F0 10 06 06 3E DV F7 (0 - 63)
+63 Maintien F0 10 06 06 3F DV F7 (0 - 63)
+64 Libération F0 10 06 06 40 DV F7 (0 - 63)
+65 Amplitude F0 10 06 06 41 DV F7 (0 - 63)
+66 Amp Mod By Velocity F0 10 06 06 42 DV F7 (-63 - +63)
+67 Mode de déclenchement F0 10 06 06 43 DV F7 (Déclenchement unique [STrig], Réinitialisation de déclenchement unique [SReset], Déclenchement multiple [MTrig),
+							 Réinitialisation de plusieurs déclencheurs [MReset], déclencheur unique externe [Xtrig], déclencheur multiple externe [XMTrig],
+							 Réinitialisation de déclenchement externe [XReset], Réinitialisation de déclenchement multiple externe [XMRst])
+68 Envelope Mode F0 10 06 06 44 DV F7 (Normal [Norm], Delay-Attack-Decay-Release [DADR], Freerun [Free], Les deux)
+69 LFO 1 Trigger F0 10 06 06 45 DV F7 (Normal [Norm], LFO1, Gated LFO 1 Trigger [G-LFO1])
+
+
+Valeurs ENV 3 HEX			 Matrix 6 /6R
+---------------------------------------------------------------------------------------------
+70 Retard F0 10 06 06 46 DV F7 (0 - 63)
+71 Attaque F0 10 06 06 47 DV F7 (0 - 63)
+72 Decay F0 10 06 06 48 DV F7 (0 - 63)
+73 Maintien F0 10 06 06 49 DV F7 (0 - 63)
+74 Libération F0 10 06 06 4A DV F7 (0 - 63)
+75 Amplitude F0 10 06 06 4B DV F7 (0 - 63)
+76 Amp Mod By Velocity F0 10 06 06 4C DV F7 (-63 - +63)
+77 Mode de déclenchement F0 10 06 06 4D DV F7 (Déclenchement unique [STrig], Réinitialisation de déclenchement unique [SReset], Déclenchement multiple [MTrig),
+							 Réinitialisation de plusieurs déclencheurs [MReset], déclencheur unique externe [Xtrig], déclencheur multiple externe [XMTrig],
+							 Réinitialisation de déclenchement externe [XReset], Réinitialisation de déclenchement multiple externe [XMRst])
+78 Enveloppe Mode F0 10 06 06 4E DV F7 (Normal [Norm], Delay-Attack-Decay-Release [DADR], Freerun [Free], Les deux)
+79 LFO 1 Trigger F0 10 06 06 4F DV F7 (Normal [Norm], LFO1, Gated LFO 1 Trigger [G-LFO1])
+
+
+Valeurs LFO 1 HEX			 Matrix 6 /6R
+---------------------------------------------------------------------------------------------
+80 Vitesse F0 10 06 06 50 DV F7 (0 - 63)
+81 Vitesse Mod Par Pression F0 10 06 06 51 DV F7 (-63 - +63)
+82 Forme d'onde F0 10 06 06 52 DV F7 (Triangle [Tri], Dents de scie vers le haut ou positives [UpSaw], Dents de scie vers le bas ou négatives [DnSaw],
+							 Onde carrée [Squar], Modulation aléatoire [Randm], Modulation de bruit [Noise], Modulation échantillonnée [Sampl])
+83 Point de redéclenchement F0 10 06 06 53 DV F7 (0 - 63)
+84 Amplitude F0 10 06 06 54 DV F7 (0 - 63)
+85 Amp Mod par rampe 1 F0 10 06 06 55 DV F7 (0 - 63)
+86 Mode de déclenchement F0 10 06 06 56 DV F7 (Désactivé, STrig, MTrig, XTrig)
+87 Décalage F0 10 06 06 57 DV F7 (Arrêt, Marche)
+88 Entrée échantillon F0 10 06 06 58 DV F7 (ENV1, ENV2, ENV3, LFO1, LFO2, Vib,
+							 Rampe 1, Rampe 2, Clavier, Portamento,
+							 Trak, Gate, Velocity, Release Velocity, Pressure,
+							 Pedal 1, Pedal 2, Lever 1, Lever 2)
+
+
+Valeurs LFO 2 HEX			 Matrix 6 /6R
+---------------------------------------------------------------------------------------------
+90 Vitesse F0 10 06 06 5A DV F7 (0 - 63)
+91 Speed ​​Mod par clavier F0 10 06 06 5B DV F7 (-63 - +63)
+92 Forme d'onde F0 10 06 06 5C DV F7 (Triangle [Tri], Dents de scie vers le haut ou positives [UpSaw], Dents de scie vers le bas ou négatives [DnSaw],
+							 Onde carrée [Squar], Modulation aléatoire [Randm], Modulation de bruit [Noise], Modulation échantillonnée [Sampl])
+93 Point de redéclenchement F0 10 06 06 5D DV F7 (0 - 63)
+94 Amplitude F0 10 06 06 5E DV F7 (0 - 63)
+95 Amp Mod par rampe 2 F0 10 06 06 5F DV F7 (0 - 63)
+96 Mode de déclenchement F0 10 06 06 60 DV F7 (Désactivé, STrig, MTrig, XTrig)
+97 Décalage F0 10 06 06 61 DV F7 (Arrêt, Marche)
+98 Exemple d'entrée F0 10 06 06 62 DV F7 (ENV1, ENV2, ENV3, LFO1, LFO2, Vib,
+							 Rampe 1, Rampe 2, Clavier, Portamento,
+							 Trak, Gate, Velocity, Release Velocity, Pressure,
+							 Pedal 1, Pedal 2, Lever 1, Lever 2)

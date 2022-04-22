@@ -1,0 +1,42 @@
+Roland : 0x41 
+sysex : 0xF0, Roland, 0x36, Channel, 0x23, 0x20, 0x01, Control, valeur, 0xF7
+http://erha.se/~ronny/juno2/Roland%20Juno%20MIDI%20System%20Exclusive%20Info.htm
+
+Valeurs Dec			 Alpha Juno 1-2
+---------------------------------------------------------------------------------------------
+- 0 DCO Env Mode              0-3
+- 1 VCF Env Mode              0-3
+- 2 VCA Env Mode              0-3
+- 3 DCO Waveform Pulse        0-3
+- 4 DCO Waveform DnSaw        0-5
+- 5 DCO Waveform Sub          0-5
+- 6 DCO Range                 0-3
+- 7 DCO Sub Level             0-3
+- 8 Noise Level               0-3
+- 9 HPF Cutoff Freq           0-3
+- 10 Chorus                   0-1
+- 11 DCO LFO Mod Deph         0-127
+- 12 DCO Env Mod Deph         0-127
+- 13 DCO After Deph           0-15
+- 14 DCO PW/PWM Deph          0-127
+- 15 DCO PWM Rate             0-127
+- 16 VCF Cuttof Freq          0-127
+- 17 VCF Resonnance           0-127
+- 18 VCF LFO mod Deph         0-127
+- 19 VCF Env Mod Deph         0-127
+- 20 VCF Key Follow           0-127
+- 21 VCF After Deph           0-127
+- 22 VCA Level                0-127
+- 23 VCA After Deph           0-127
+- 24 LFO Rate                 0-127
+- 25 LFO Delay Time           0-127
+- 26 Env T1                   0-127
+- 27 Env L1                   0-127
+- 28 Env T2                   0-127
+- 29 Env L2                   0-127
+- 30 Env T3                   0-127 
+- 31 Env L3                   0-127
+- 32 Env T4                   0-127
+- 33 Env Key                  0-127
+- 34 Chorus Rate              0-127
+- 35 Bender Range             0-12

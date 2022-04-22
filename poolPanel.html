@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/icn-STS.png"/>
+    <title>The Pool</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sass/layout/poolPanel.css">
+</head>
+
+<body class="unselectable">
+    <!--- Barre de navigation -->
+    <nav> 
+        <ul>
+            <li>
+                <div>
+                    <a href="./index.html">
+                        <img src="img/icnRetour.png" width="30" height="24" class="power">
+                    </a>
+                </div>
+            </li>
+        </ul>     
+        <ul>            
+            <li>
+                <div id="thePool">
+                    <img src="img/Baloran/The Pool.svg"  height="40" width="100" class="">
+                    
+                    <img src="img/icnVideo.png" class="icn" id="icnVideo">
+                </div>
+            </li>
+            <li>
+                <h1 >The Pool Controller</h1>
+            </li>
+            <li>
+                <a href="https://baloran.com/store/?_route_=blog/projet-pool" target="_blank">
+                    <img src="img/Baloran/Baloran Logo.svg"  height="40" width="140" class="">
+                </a>        
+            </li>
+        </ul> 
+        <ul>
+            <li>
+                <h3 >Synth-T-Steel WebMidi Application</h3>
+            </li>
+            <li>
+                <img src="img/icn-STS Blanc.png" width="30" height="26" class="">
+            </li>
+        </ul>   
+    </nav>
+    <!---->
+
+
+
+    <!-- Page Pool Panel : contient les fonctions midi de the Pool --->
+    <main> 
+        <!-- Vidéo de présentation -->
+        <div class="video invisible"></div>
+        <!---->
+
+        <!-- Midi -->
+        <section class="midiStandard">
+            <!-- Synth -->
+            <div class="">
+                <div id="device" class="verticale module"></div>
+            </div>
+            
+            <!-- Control Change -->
+            <section>
+                <!-- Potentiomètre -->
+                <div class="potentiometre" id="stdMidiCtrlChg"></div>
+                <!---->
+            </section>
+            <!---->
+            <!-------------------------------------------------------------------------------------->
+
+            <!-- Midi In -->
+            <section>
+                <div class="module horizontale">
+                    <div>
+                        <h2 class="select">Midi In</h2>
+                        <h3 class="select">Id Interface</h3>
+                        <select name="intMidiIn" id="intMidiIn" class="intMidi"></select>
+                        
+                        <h3  class="select">In channel</h3>
+                        <input disabled type="number" name="chnMidiIn"  id="chnMidiIn"  class="val1-16" min="1" max="16" value="1">                         
+                        
+                        <h2 class="select">Midi Thru</h2>
+                        <h3 for="activeThru" for="activeThru">
+                            <input type="checkbox" name="activeThru" id="activeThru">
+                            In .
+                            <label class="checkbox" for="activeThru">>></label> 
+                            .Out
+                        </h3>
+                    </div>
+
+                    <div>
+                        <h2  class="select">Messages in :</h2>
+                        <div class="inline" id="pgChgMidiIn">
+                            <h3 >Program change :</h3>
+                        </div>
+
+                        <div class="inline" id="noteMidiIn">
+                            <h3 >Note :</h3>
+                        </div>
+
+                        <div class="inline" id="velMidiIn">
+                            <h3 >Velocity :</h3>
+                        </div>
+                        
+                        <div class="inline" id="relMidiIn">
+                            <h3 >Release :</h3>
+                        </div>
+
+                        <div class="inline" id="pitchMidiIn">
+                            <h3 >Pitch bend :</h3>
+                        </div>
+                        
+                        <div class="inline" id="aftchMidiIn">
+                            <h3 >Aftertouch :</h3>
+                        </div>
+
+                        <div class="inline" id="cChgNumMidiIn">
+                            <h3 >Control change num :</h3>
+                        </div>
+                        
+                        <div class="inline" id="cChgMidiIn">
+                            <h3 >Control change val :</h3>
+                        </div>
+                    </div>    
+                </div>
+            </section>
+            <!---->
+        </section>
+
+        <!-- Clavier virtuel -->
+        <section class="clavier overflowAuto verticale" id="clavier"></section>
+        <!---->
+
+        <div class="panel" id="panel">
+            
+            <!-- Oscillateurs -->
+            <div id="oscillateur ">
+                <!-- VCO 1 -->
+                <div id="vco1" class="verticale module vco"></div>
+                <!-------------------------------------------------------------------------------------->
+
+                <!-- DCO 1 -->
+                <div id="dco1" class="verticale module dco"></div>
+                <!-------------------------------------------------------------------------------------->
+
+                <!-- VCO 2 -->
+                <div id="vco2" class="verticale module vco"></div>
+                <!-------------------------------------------------------------------------------------->
+
+                <!-- DCO 2 -->
+                <div id="dco2" class="verticale module dco"></div> 
+                <!-------------------------------------------------------------------------------------->
+            </div>
+            <!-------------------------------------------------------------------------------------->
+            
+            <!-- Mixer -->
+            <div id="mixer">
+                <!-- Mix 1-->
+                <div id="mix1" class="verticale module mix"></div>                
+                <!-------------------------------------------------------------------------------------->
+
+                <!-- Mix 2 -->
+                <div id="mix2" class="verticale module mix"></div> 
+                <!-------------------------------------------------------------------------------------->
+            </div>
+            <!-------------------------------------------------------------------------------------->
+            
+            <!-- Filtres -->
+            <div id="filtre">
+                <!-- VCF 1-->
+                <div id="vcf1" class="verticale module vcf"></div>
+                <!-------------------------------------------------------------------------------------->
+
+                <!-- VCF 2 -->
+                <div id="vcf2" class="verticale module vcf"></div>
+                <!-------------------------------------------------------------------------------------->
+
+                <!-- VCF 3 -->
+                <div id="vcf3" class="verticale module vcf"></div>
+                <!-------------------------------------------------------------------------------------->
+
+                <!-- VCF 4 -->
+                <div id="vcf4" class="verticale module vcf"></div>
+                <!-------------------------------------------------------------------------------------->
+            </div>
+            <!-------------------------------------------------------------------------------------->
+
+            <!-- Enveloppes -->
+            <div class="horizontale" id="enveloppe">
+                <div class="verticale">                    
+                    <!-- Env 1 -->
+                    <div id="env1" class="verticale module env"></div>
+                    <!-------------------------------------------------------------------------------------->
+    
+                    <!-- Env 2 -->
+                    <div id="env2" class="verticale module env"></div>
+                    <!-------------------------------------------------------------------------------------->
+                </div>
+
+                <div class="verticale">
+                    <!-- Env F -->
+                    <div id="envF" class="verticale module env"></div>
+                    <!-------------------------------------------------------------------------------------->
+
+                    <!--Env M -->
+                    <div id="envM" class="verticale module env"></div>
+                    <!-------------------------------------------------------------------------------------->
+                </div>
+            </div>
+            <!-------------------------------------------------------------------------------------->
+
+
+            <!-- LFO -->
+            <div id="lfo" class="horizontale">
+                <!-- LFO 1 -->
+                <div id="lfo1" class="verticale module lfo"></div>
+                <!-------------------------------------------------------------------------------------->
+
+                <!-- LFO 2 -->
+                <div id="lfo2" class="verticale module lfo"></div>
+                <!-------------------------------------------------------------------------------------->
+
+                <!-- LFO 3 -->
+                <div id="lfo3" class="verticale module lfo"></div>
+                <!-------------------------------------------------------------------------------------->
+            </div>
+            <!-------------------------------------------------------------------------------------->
+
+            <!-- Amplis -->
+            <div id="ampli" class="horizontale">
+                <!-- VCA 1 -->
+                <div id="vca1" class="verticale module vca"></div>
+                <!-------------------------------------------------------------------------------------->
+
+                <!-- VCA 2 -->
+                <div id="vca2" class="verticale module vca"></div>
+                <!-------------------------------------------------------------------------------------->
+            </div>
+            <!-------------------------------------------------------------------------------------->
+
+            <!-- Master -->            
+                <div id="master" class="verticale module master"></div>               
+            <!-------------------------------------------------------------------------------------->  
+
+            <!-- Ecran -->
+            <div id="ecran">
+                <div id="screen" class="verticale module"></div>
+            </div>
+            <!-------------------------------------------------------------------------------------->
+            
+            <!-- Sequenceurs -->
+            <div id="seq" class="verticale module seq">
+                <h2>Sequencer</h2>
+                <!-- Seq step -->
+                <div id="seqStep" class="horizontale"></div>
+                
+                <!-- Seq cmd -->            
+                <div id="seqCmd" class="verticale seqCmd"></div>
+            </div>
+            <!-------------------------------------------------------------------------------------->
+        </div>
+
+        
+        <!-- Interface -->
+        <section class="infoMidi overflowAuto interfaceDetect" id="interfaceDetect">
+            <h3 class="erreur" id="listInt">Interface Midi : non reconnue !</h3>
+        </section>    
+        <!---->
+    </main>
+
+        <!-- Script JS -->
+        
+            <!-- jQuery
+                <script src="jQuery.js"></script>            
+            -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            
+            <!-- affichage JS -->
+            <script src="fonctions.js"></script>
+            <script src="video.js"></script>     
+            <script src="clavier.js"></script>        
+            <script src="potentiometre.js"></script>  
+            <script src="miniPot.js"></script>   
+            <script src="synths.js"></script>              
+            <script src="poolPanel.js"></script>        
+            <!-- -->
+
+            <!-- webMidi JS -->
+            <!-- webMidi CDN
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/webmidi@3.0.0-alpha.16/dist/webmidi.iife.js"></script>
+            -->
+            <script src="webmidi.iife.js"></script>
+            <script src="WebMidiApp.js"></script>  
+
+
+        <!---->   
+</body>
+
+</html>
+

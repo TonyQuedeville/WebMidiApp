@@ -1,0 +1,23 @@
+
+Icone clavier : https://icones8.fr/icon/set/musique/pastel-glyph
+Icone Retour : https://icones8.fr/icons/set/fleche-gauche
+
+/* Liste des authentifiants fabricants Sysex
+https://www.midi.org/specifications-old/item/manufacturer-id-numbers
+    let Oberheim = 0x10 
+    let Roland = 0x41 
+    let Korg = 0x42 
+    let Yamaha = 0x43 
+    let SequentialCircuit = 0x01
+    let Moog = 0x04
+    let Ensoniq = 0x0F  
+    let Emu = 0x18  
+    let Quasimidi = 0x3F  
+    let Lexicon = 0x06  
+    let TcElectronics = [0x00, 0x20, 0x1F] 
+/*-*/
+
+
+Juno-106
+Implementation Midi Juno-106 (manuel) : http://www.synthfool.com/docs/Roland/Juno_Series/Roland_Juno_106/Roland_Juno106_Owners_Manual.pdf
+vidéo : https://www.youtube.com/watch?v=O_RnYnQ2Qtg
