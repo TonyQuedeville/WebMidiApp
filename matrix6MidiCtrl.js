@@ -301,7 +301,7 @@ class Parametres {
     static get MINIMAXI_MINIPOT() {
         return {
             'pot-val-Detune-DCO2': [0, 31], //[-31, 31]
-            'pot-val-Freq-VCF1': [0, 127],             
+            'pot-val-Freq-VCF': [0, 127],             
         }
     }
 }
