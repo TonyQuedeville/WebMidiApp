@@ -194,8 +194,8 @@ class SynthEnumerations {
                     image: 'img-ThePool.jpeg',
                     controleur: './poolPanel.html',
                     video: 'https://www.youtube.com/embed/ro3e6WaOZdE',
-                    ownerManual: '',
-                    serviceManual: '',
+                    ownerManual: undefined,
+                    serviceManual: undefined,
                     info: undefined,
                 },            
         };
