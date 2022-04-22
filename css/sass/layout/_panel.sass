@@ -1,0 +1,134 @@
+/* --------------------------------------------------------------------------------------------
+    Tony Steel
+
+    Web-Midi-App
+        _panel.sass
+            08/04/2022
+    -------------------------------------------------------------------------------------------*/  
+/* Panneau de controls modulaires */
+.panel
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+    align-items: center
+    justify-items: center
+    align-items: center 
+    width: 100vw
+    padding-top: 50px
+
+.module
+    @extend %module-sass
+.center
+    @extend %center-sass
+.bottom
+    @extend %bottom-sass
+.verticale
+    @extend %verticale-sass
+    
+.horizontale
+    @extend %horizontale-sass
+.space-around
+    @extend %space-around-sass    
+
+.midiStandard 
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+    align-items: center // flex-start, flex-end, center 
+    margin-top: 60px
+
+.stdMidiCtrlChg
+    &>h3    
+        color: $txtNoir
+
+.infoMidi 
+    margin: 10px
+    display: flex
+    flex-direction: column
+    align-items: top
+    margin-left: 10px  
+
+.visusysex
+    width: 270px
+    height: 30px 
+    display: flex
+
+.overflowAuto 
+    overflow: auto
+    //background: rgba(133, 92, 92, 50%)
+
+.overflowScroll 
+    overflow: scroll
+    //background: rgba(129, 85, 85, 50%)
+
+.overflowHidden 
+    overflow: hidden
+    //background: rgba(133, 92, 92, 50%)
+
+.inline 
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    padding-left: 20px
+
+ul
+    display: flex
+    justify-content: space-around
+    list-style-type : none
+
+li
+    margin: 10px   
+
+.power
+    //background: $fondModule
+    border-radius: 20px
+    //box-shadow: $ombre
+    &:hover 
+        filter: sepia(100%)
+        //box-shadow: $lueur
+
+.cell
+    width: 84px
+    height: 90p
+    padding: 4px
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-top: 0px
+    //margin-bottom: 25px
+    /*border: 1px solid rgb(255, 255, 255);*/
+
+.cell-double
+    width: 176px
+    height: 84px
+    display: flex
+    justify-content: center
+    align-items: center
+    /*border: 1px solid rgb(255, 255, 255);*/
+
+.cell-demi-double
+    width: 164px
+    height: 42px
+    display: flex
+    justify-content: center
+    align-items: center
+    /*border: 1px solid rgb(255, 255, 255);*/
+
+.titre
+    padding-top: 0px
+
+
+/*--------------------------------------------------------------------------------------------------*/
+
+
+/* Sequenceur */
+.seq 
+    width: auto
+    height: auto
+    flex-wrap: wrap
+    justify-content: center 
+    margin: 10px
+
+.seqCmd 
+    margin-top: 10px

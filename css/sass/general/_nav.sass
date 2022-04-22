@@ -1,0 +1,33 @@
+/* --------------------------------------------------------------------------------------------
+    Tony Steel
+
+    Web-Midi-App
+        _nav.sass
+            08/04/2022
+    -------------------------------------------------------------------------------------------*/    
+/* Barre de navigation */
+
+nav  
+    z-index: 3
+    width: 100vw // vw:% width vh:% height 
+    height: 80px // vh:% height 
+    position: fixed
+    margin-top: -30px 
+    background : $fondNav
+    -webkit-mask-box-image: url('../img/Trame2.png') 40 repeat
+    //transition: 400ms
+    display: flex
+    justify-content: space-around
+
+    &>ul // > : enfant directe 
+        list-style: none
+        display: flex
+        //flex-direction: row;  /* row par défaut 
+        //flex-wrap: nowrap; /* revient à la ligne quand ça dépasse 
+        justify-content: center
+        column-gap: 1em
+        align-items: center
+
+#thePool 
+    display: flex
+    align-items: center

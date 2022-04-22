@@ -1,0 +1,136 @@
+/* --------------------------------------------------------------------------------------------
+    Tony Steel
+
+    Web-Midi-App
+        _body.sass
+            08/04/2022
+    -------------------------------------------------------------------------------------------*/  
+
+
+/* Clavier virtuel: 10 octaves de C-1 à C9 */
+.clavier 
+    z-index: 1
+    width: 97.5vw
+    height: 180px //800px
+    padding: 10px
+    display: flex
+    position: sticky
+    top: 70px
+    align-items: flex-start
+    //background : $fondModule //linear-gradient(0deg, rgba(7, 24, 36, 0.7) 0%, rgba(2, 12, 22, 0.9) 52.21%, rgba(3, 24, 37, 0.7) 100%)
+    -webkit-mask-box-image: url('../img/Trame2.png') 30 repeat
+
+/*---*/
+
+/* Icone d'ouverture clavier */
+.icnClavier 
+    //height: 20px
+    //padding-bottom: 2px
+    //position: relative
+    //display: flex
+    //align-items: flex-start
+    //justify-content: flex-start
+
+/*---*/
+
+/* div Touches blanches */
+.clavBlanche 
+    display: flex
+    align-items: bottom //flex-start
+    position: absolute
+    height: inherit
+    padding: 5px
+    top: 1px
+    margin: 0px  
+    background : $fondModule 
+    -webkit-mask-box-image: url('../img/Trame2.png') 50 repeat 
+
+/*---*/
+
+/* div Touches noires */
+.clavNoire 
+    display: flex
+    position: absolute
+    top: 13px
+    padding-left: 16px
+    padding-top: 0px
+
+/*---*/
+
+/* Touche blanche */
+.tchBlanche 
+    width: 30px
+    height: 160px
+    margin: 1px
+    padding: 0
+    border-radius: 5px
+    background: linear-gradient(0deg, rgb(218, 215, 187), rgb(255, 255, 255), rgb(202, 202, 202))
+    box-shadow: $ombre
+    
+    display: flex
+    position: static
+    align-items: flex-end
+    justify-content: center
+    /*-*/
+
+/* Repére C-1 à C9 */
+.nOct 
+    margin: 1px
+    margin-bottom: 5px
+    font-size: 14px
+    text-align: center
+    color: $txtNoir
+
+/* Survol de la touche blanche */
+.tchBlanche:hover 
+    box-shadow: $lueur
+    background: linear-gradient(0deg, rgb(185, 169, 23), rgb(231, 221, 79), rgb(191, 192, 147))
+    cursor: pointer
+    /*-*/
+
+/* Note On sur la touche blanche */
+.tchBlancheOn    
+    background: linear-gradient(0deg, rgb(185, 169, 17), rgb(209, 196, 8), rgb(191, 192, 147))
+    /*-*/
+
+/* Clic sur la touche blanche */
+.tchBlancheClic 
+    background: linear-gradient(0deg, rgb(29, 131, 55), rgb(21, 197, 21), rgb(114, 134, 111))
+    /*-*/
+
+/*---*/    
+
+/* Touche Noire */
+.tchNoire 
+    width: 24px
+    height: 95px
+    margin-top: 0
+    margin-left: 4px
+    margin-right: 4px
+    padding: 0
+    border-radius: 5px
+    background: linear-gradient(0deg, rgb(28, 31, 5), rgb(48, 48, 48), rgb(0, 0, 0))
+    box-shadow: $ombre
+    /*-*/
+
+/* survol de la touche noire */
+.tchNoire:hover 
+    box-shadow: $lueur
+    background: linear-gradient(0deg, rgb(92, 87, 22), rgb(189, 175, 24), rgb(56, 54, 6))
+    cursor: pointer
+
+/* NoteOn sur la touche noire */
+.tchNoireOn
+    background: linear-gradient(0deg, rgb(44, 42, 11), rgb(168, 155, 5), rgb(56, 54, 6))
+
+/* clic sur la touche noire */
+.tchNoireClic 
+    background: linear-gradient(0deg, rgb(14, 59, 21), rgb(17, 126, 23), rgb(6, 56, 9))
+
+
+/* Bouton Panic */
+.panic
+    //display: flex
+    position: relative
+    margin-left: 1194px
+    margin-top: 10px

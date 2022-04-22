@@ -1,0 +1,33 @@
+/* --------------------------------------------------------------------------------------------
+    Tony Steel
+
+    Web-Midi-App
+        _mixins.sass
+            08/04/2022
+    -------------------------------------------------------------------------------------------*/    
+/* Mixins */
+
+@mixin bouton($elipse: 2, $larg: auto, $hauteur: auto)
+    @if $larg != auto
+        width: #{$larg}px
+    @if $hauteur != auto
+        height: #{$hauteur}px
+
+    @if $elipse == 0
+        border-radius : 100%
+    @else 
+        @if $larg == auto   
+            border-radius: 1em
+        @else
+            border-radius: #{$hauteur / $elipse}px 
+    
+    padding: 5px 10px 5px 10px
+    //margin: 0px 1px 0px 1px 
+
+    background : $fondBtn
+    box-shadow: $ombre
+    border: none
+
+    display: flex
+    align-items: center
+    justify-content: center

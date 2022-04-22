@@ -1,0 +1,57 @@
+/* --------------------------------------------------------------------------------------------
+    Tony Steel
+
+    Web-Midi-App
+        _boutons.sass
+            08/04/2022
+    -------------------------------------------------------------------------------------------*/    
+/* Boutons */ 
+
+button 
+    +bouton() 
+    color: $txtBlanc
+    font-size: 0.8em
+    font-weight: normal
+    font-style: italic   
+
+    &:hover
+        color: $txtJaune
+        box-shadow: $lueur
+        cursor: pointer
+
+/* Boutons The Pool */
+.btn-ls
+    +bouton($elipse,100,40) 
+    margin: 10px    
+
+.checkbox
+    +bouton()  
+    margin-top: -20px
+
+    color: $txtBleu
+    font-size: 0.8em
+    font-weight: normal
+    font-style: italic
+
+    &:hover 
+        box-shadow: $lueur
+        cursor: pointer
+
+.radio
+    +bouton()  
+    padding: 3px 5px 3px 3px 
+    margin: 3px 3px 3px 3px   
+
+    color: $txtBleu
+    font-size: 0.8em
+    font-weight: normal
+    font-style: italic
+
+    &:hover 
+        box-shadow: $lueur
+        cursor: pointer
+
+
+
+
+
