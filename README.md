@@ -12,7 +12,7 @@ Pour l'heure cette application ne peux que piloter les synthétiseurs suivant :
 - Roland Juno-106
 - Roland Alpha-juno 1, 2, et MKS50
 - Oberheim Matrix 6 et 6R
-- (Baloran The Pool en simulation, en prévision de sa version "petit bain")
+- Baloran The Pool en simulation. (en prévision de sa version "petit bain")
 - (j'ai aussi dans l'idée que des controleurs de simulation d'anciens synthétiseurs analogiques non midifié, pourrait être créés et servir de pense bète aux réglages manuels de ces vieux instruments vintages tant prisés des musiciens dont je fait parti.)
  
 La page d'accueil permet de choisir un controleur de synthétiseur mais comporte aussi un controleur standard Midi. (Note On, Note Off, Pitch, Prg change, Ctrl change ...). Les controls Midi Standard étant communs à n'importe quels synthétiseurs du marché, vous pourrez donc par exemple piloter une serie d'expandeurs en Midi Out avec un clavier maitre en Midi In. Un sequencer est aussi prévu dans les évolutions à venir.
