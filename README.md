@@ -3,7 +3,8 @@ Application midi web controller Synth-T-Steel
 
 Controleur pour instruments de musique Midi. 
 Prototype d'essai qui utilise l'API WebMidi.js v3.0.0-alpha.26 (Fichier webmidi.iife.js) : https://webmidijs.org.
-
+Compatibilité: Google Chrome, Brave Browser, Opera Crypto Developper
+Incompatible: FireFox, Safari
 - - - - -
 
 Pour pouvoir l'utiliser, il faut posséder une interface midi connectée à votre ordinateur. L'API doit la reconnaitre automatiquement.
