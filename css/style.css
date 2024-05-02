@@ -484,8 +484,7 @@ img {
 }
 
 .image {
-  heigth: 250px;
-  width: 300px;
+  heigth: 10%;
   -webkit-mask-box-image: url("../img/Trame2.png");
 }
 
