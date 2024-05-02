@@ -484,7 +484,7 @@ img {
 }
 
 .image {
-  heigth: 10%;
+  height: 250px;
   -webkit-mask-box-image: url("../img/Trame2.png");
 }
 
@@ -1405,7 +1405,7 @@ select:hover {
 .carousel {
   width: 99vw;
   height: 400px;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .card {
